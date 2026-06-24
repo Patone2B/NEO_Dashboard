@@ -1,74 +1,226 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>G19 Neo Dashboard V8</title>
-  <meta name="description" content="Recyclez un smartphone en écran de contrôle futuriste pour PC." />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G19 Neo Dashboard — Tableau de bord local</title>
+  <meta name="description" content="G19 Neo Dashboard transforme un smartphone en écran de contrôle local pour PC Windows.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"><span class="brand-mark">G19</span><span>Neo Dashboard</span></div>
-    <nav>
-      <a href="#features">Fonctions</a>
-      <a href="#security">Sécurité</a>
-      <a href="#install">Installation</a>
-    </nav>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#accueil" aria-label="Accueil G19 Neo Dashboard">
+        <span class="brand-mark">G19</span>
+        <span class="brand-text">Neo Dashboard</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#prix">Prix</a>
+        <a href="#licence">Licence</a>
+        <a href="#fonctionnalites">Fonctionnalités</a>
+        <a href="#telechargement">Télécharger</a>
+        <a href="#apropos">À propos</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Version V8 • local • futuriste</p>
-        <h1>Transforme ton iPhone en cockpit de contrôle pour PC.</h1>
-        <p class="lead">G19 Neo Dashboard affiche les stats système, contrôle le son, lance tes applications, gère la météo et fonctionne sur ton réseau local, sans cloud obligatoire.</p>
-        <div class="actions">
-          <a class="btn primary" href="#install">Installer</a>
-          <a class="btn ghost" href="#features">Voir les fonctions</a>
+    <section id="accueil" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Dashboard local pour PC Windows</p>
+          <h1>Transforme ton iPhone ou ton smartphone en écran de contrôle pour ton PC.</h1>
+          <p class="hero-text">
+            G19 Neo Dashboard permet de surveiller ton système, contrôler le son,
+            lancer tes logiciels et afficher des pages personnalisées depuis un appareil mobile,
+            sans cloud et sans compte utilisateur.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#telechargement">Télécharger le logiciel</a>
+            <a class="button secondary" href="#fonctionnalites">Voir les fonctions</a>
+          </div>
+
+          <div class="trust-list" aria-label="Points de confiance">
+            <span>Local</span>
+            <span>Sans abonnement</span>
+            <span>Windows</span>
+            <span>Mobile</span>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Aperçu du tableau de bord">
+          <div class="mock-window">
+            <div class="mock-topbar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="mock-dashboard">
+              <article>
+                <small>CPU</small>
+                <strong>42%</strong>
+              </article>
+              <article>
+                <small>GPU</small>
+                <strong>À venir</strong>
+              </article>
+              <article>
+                <small>RAM</small>
+                <strong>61%</strong>
+              </article>
+              <article>
+                <small>Météo</small>
+                <strong>24°C</strong>
+              </article>
+            </div>
+
+            <div class="mock-buttons">
+              <button>DaVinci</button>
+              <button>OBS</button>
+              <button>Audio</button>
+              <button>Apps</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hero-visual">
-        <img src="assets/dashboard-preview.svg" alt="Aperçu futuriste du tableau de bord" />
+    </section>
+
+    <section id="prix" class="section light-section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Prix</p>
+          <h2>Gratuit</h2>
+          <p>
+            Le logiciel est proposé gratuitement. Il est pensé comme un outil simple,
+            local et accessible pour recycler un smartphone en écran de contrôle.
+          </p>
+        </div>
+
+        <div class="price-card">
+          <span class="price">0 €</span>
+          <p>Pas d'abonnement. Pas de compte. Pas de serveur externe obligatoire.</p>
+          <a class="button primary" href="#telechargement">Accéder au téléchargement</a>
+        </div>
       </div>
     </section>
 
-    <section id="features" class="section">
-      <h2>Un tableau de bord pensé pour le bureau, le jeu et le montage</h2>
-      <div class="grid cards">
-        <article><img src="assets/gpu-card.svg" alt="Icône GPU" /><h3>Monitoring PC</h3><p>CPU, RAM, GPU, VRAM, disque, température et réseau dans une interface lisible.</p></article>
-        <article><img src="assets/media-card.svg" alt="Icône média" /><h3>Contrôle média</h3><p>Lecture, pause, précédent, suivant, volume et mute directement depuis le téléphone.</p></article>
-        <article><img src="assets/phone-card.svg" alt="Icône téléphone" /><h3>iPhone paysage</h3><p>Interface adaptée au mode paysage, avec de gros boutons et un mode PWA sans barre Safari.</p></article>
-        <article><img src="assets/weather-card.svg" alt="Icône météo" /><h3>Météo intégrée</h3><p>Ville personnalisée, clé API OpenWeather, température, humidité, ressenti et vent.</p></article>
+    <section id="licence" class="section">
+      <div class="container narrow">
+        <p class="eyebrow">Licence</p>
+        <h2>Une utilisation claire et transparente</h2>
+        <p>
+          G19 Neo Dashboard peut être utilisé librement pour un usage personnel.
+          Avant toute redistribution publique, intégration commerciale ou modification partagée,
+          il est recommandé de préciser clairement la licence choisie dans le dépôt du projet.
+        </p>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Usage personnel</h3>
+            <p>Installation et utilisation sur ton propre ordinateur.</p>
+          </article>
+          <article class="info-card">
+            <h3>Partage</h3>
+            <p>Le partage doit conserver le nom du projet et les mentions d'origine.</p>
+          </article>
+          <article class="info-card">
+            <h3>Transparence</h3>
+            <p>Le projet doit indiquer clairement ce qu'il fait sur le PC.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="security" class="section split">
-      <div>
-        <p class="eyebrow">Sécurité locale</p>
-        <h2>Un PIN simple, un token propre, aucun compte à créer.</h2>
-        <p>Le téléphone se connecte au PC avec un PIN défini localement. Après validation, un token de session est mémorisé. Le QR code sert à ouvrir la bonne adresse réseau du PC.</p>
-      </div>
-      <div class="terminal">
-        <p><span>✓</span> PIN local</p>
-        <p><span>✓</span> Session téléphone</p>
-        <p><span>✓</span> Réparation token</p>
-        <p><span>✓</span> Réseau local</p>
+    <section id="fonctionnalites" class="section light-section">
+      <div class="container">
+        <p class="eyebrow">Fonctionnalités</p>
+        <h2>Un tableau de bord pensé pour rester utile</h2>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Contrôle multimédia</h3>
+            <p>Lecture, pause, volume, précédent, suivant et mute depuis le téléphone.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Lancement d'applications</h3>
+            <p>Ajout de chemins personnalisés pour lancer tes logiciels depuis une page dédiée.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Pages personnalisées</h3>
+            <p>Création de pages avec plusieurs boutons configurables selon ton usage.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Météo</h3>
+            <p>Affichage météo avec ville et clé API configurables depuis les réglages.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Diagnostic</h3>
+            <p>Informations utiles pour vérifier l'état du serveur, du réseau et de la session.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Connexion locale</h3>
+            <p>Connexion par PIN sur le réseau local, sans service cloud obligatoire.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="install" class="section install">
-      <h2>Installation rapide</h2>
-      <div class="steps">
-        <div><b>1</b><p>Télécharge le ZIP et décompresse le dossier.</p></div>
-        <div><b>2</b><p>Lance <code>npm install</code> puis <code>npm start</code>.</p></div>
-        <div><b>3</b><p>Scanne le QR code ou ouvre l’adresse locale sur l’iPhone.</p></div>
+    <section id="telechargement" class="section download-section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Téléchargement</p>
+          <h2>Télécharger G19 Neo Dashboard</h2>
+          <p>
+            Le logiciel se lance sur le PC. Le téléphone se connecte ensuite à l'adresse locale
+            affichée par l'application ou via le QR code généré par le PC.
+          </p>
+
+          <ol class="steps">
+            <li>Télécharger le ZIP du logiciel.</li>
+            <li>Extraire le dossier sur le PC Windows.</li>
+            <li>Lancer l'installation des dépendances si nécessaire.</li>
+            <li>Démarrer l'application puis scanner le QR code avec le téléphone.</li>
+          </ol>
+        </div>
+
+        <div class="download-card">
+          <h3>Version actuelle</h3>
+          <p>G19 Neo Dashboard V9 ou version supérieure.</p>
+          <a class="button primary" href="#">Lien de téléchargement à ajouter</a>
+          <a class="button secondary" href="#">Voir le dépôt GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="apropos" class="section">
+      <div class="container narrow">
+        <p class="eyebrow">À propos</p>
+        <h2>Un projet local, simple et évolutif</h2>
+        <p>
+          G19 Neo Dashboard est né de l'idée de recycler un smartphone comme écran secondaire,
+          dans l'esprit des anciens claviers Logitech G19, mais avec une interface web moderne.
+        </p>
+        <p>
+          Le projet privilégie la simplicité : un PC qui héberge le tableau de bord,
+          un téléphone connecté au même réseau, et des fonctions pratiques sans compte externe.
+        </p>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>G19 Neo Dashboard V8 — logiciel local pour transformer un smartphone en écran de contrôle PC.</p>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>G19 Neo Dashboard — Projet local pour PC Windows.</p>
+      <a href="#accueil">Retour en haut</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
