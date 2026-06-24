@@ -1,10 +1,18 @@
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.12 });
+const links = document.querySelectorAll('a[href^="#"]');
 
-document.querySelectorAll('.section, .cards article, .steps div').forEach(el => {
-  el.classList.add('reveal');
-  observer.observe(el);
+links.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const targetId = link.getAttribute('href');
+    const target = document.querySelector(targetId);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
 });
