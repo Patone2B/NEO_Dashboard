@@ -1,5 +1,6 @@
 const app = document.querySelector('#app');
 const navButtons = document.querySelectorAll('.nav-button[data-page]');
+const validPages = ['accueil', 'fonctionnalites', 'comparaison', 'configuration', 'prix', 'licence', 'telechargement', 'apropos'];
 
 function setActiveButton(pageName) {
   navButtons.forEach((button) => {
@@ -8,19 +9,16 @@ function setActiveButton(pageName) {
 }
 
 function renderPage(pageName) {
-  const template = document.querySelector(`#page-${pageName}`);
+  const safePageName = validPages.includes(pageName) ? pageName : 'accueil';
+  const template = document.querySelector(`#page-${safePageName}`);
 
-  if (!template) {
-    renderPage('accueil');
-    return;
-  }
+  if (!template) return;
 
   app.replaceChildren(template.content.cloneNode(true));
-  setActiveButton(pageName);
-  window.history.replaceState(null, '', `#${pageName}`);
+  setActiveButton(safePageName);
+  window.history.replaceState(null, '', `#${safePageName}`);
 
-  const title = document.querySelector('h1');
-
+  const title = app.querySelector('h1');
   if (title) {
     title.setAttribute('tabindex', '-1');
     title.focus({ preventScroll: true });
@@ -29,11 +27,7 @@ function renderPage(pageName) {
 
 function handleNavigation(event) {
   const button = event.target.closest('.nav-button[data-page]');
-
-  if (!button) {
-    return;
-  }
-
+  if (!button) return;
   event.preventDefault();
   renderPage(button.dataset.page);
 }
@@ -45,5 +39,4 @@ window.addEventListener('popstate', () => {
   renderPage(pageName);
 });
 
-const initialPage = window.location.hash.replace('#', '') || 'accueil';
-renderPage(initialPage);
+renderPage(window.location.hash.replace('#', '') || 'accueil');
